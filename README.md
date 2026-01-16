@@ -60,11 +60,6 @@ A denormalized, analytics-ready dataset was created to support BI consumption.
 **Processed dataset:**
 /data/processed/dashboard_master_view.csv
 
-yaml
-Copy code
-
-This file represents a production-style analytics warehouse output optimized for dashboarding.
-
 ---
 
 ## 📊 Power BI Analytics & Dashboarding
