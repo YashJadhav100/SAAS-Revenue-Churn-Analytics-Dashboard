@@ -2,7 +2,7 @@
 
 An end-to-end SaaS analytics project that simulates how modern data teams transform raw operational data into executive-ready insights using PostgreSQL and Power BI.
 
-This project covers the full analytics lifecycle — from raw data ingestion and modeling to KPI engineering, dashboard design, and live deployment.
+This project covers the full analytics lifecycle from raw data ingestion and modeling to KPI engineering, dashboard design, and live deployment.
 
 ---
 
@@ -110,20 +110,17 @@ This simulates real-world BI deployment for business stakeholders.
 ---
 
 ## 📂 Project Structure
-
+```text
 data/
 ├── raw/
-│ ├── ravenstack_accounts.csv
-│ ├── ravenstack_subscriptions.csv
-│ ├── ravenstack_feature_usage.csv
-│ ├── ravenstack_churn_events.csv
-│ ├── ravenstack_support_tickets.csv
-│ └── README.md
+│   ├── ravenstack_accounts.csv
+│   ├── ravenstack_subscriptions.csv
+│   ├── ravenstack_feature_usage.csv
+│   ├── ravenstack_churn_events.csv
+│   ├── ravenstack_support_tickets.csv
+│   └── README.md
 └── processed/
-└── dashboard_master_view.csv
-
-yaml
-Copy code
+    └── dashboard_master_view.csv
 
 ---
 
@@ -144,10 +141,10 @@ The implementation closely reflects how analytics teams operate in modern SaaS o
 
 ## 🛠️ Tools & Technologies
 
-- **PostgreSQL** — data modeling and transformation
-- **SQL** — joins, aggregations, metric engineering
-- **Power BI** — dashboarding and DAX measures
-- **GitHub** — version control and project documentation
+- **PostgreSQL** - data modeling and transformation
+- **SQL** - joins, aggregations, metric engineering
+- **Power BI** - dashboarding and DAX measures
+- **GitHub** - version control and project documentation
 
 ---
 
