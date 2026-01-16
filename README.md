@@ -29,7 +29,7 @@ The project uses multiple structured datasets representing core SaaS systems:
 
 All raw datasets are stored in:
 
-```text
+
 /data/raw
 These datasets intentionally mirror fragmented data typically pulled from billing platforms, product analytics tools, and CRM systems.
 
