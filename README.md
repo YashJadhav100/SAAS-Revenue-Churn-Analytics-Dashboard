@@ -1,150 +1,158 @@
 # SaaS Revenue & Churn Analytics Dashboard
 
-An end-to-end **SaaS analytics project** that transforms raw operational data into an interactive, executive-ready business intelligence dashboard using **PostgreSQL** and **Power BI**.
+An end-to-end SaaS analytics project that simulates how modern data teams transform raw operational data into executive-ready insights using PostgreSQL and Power BI.
+
+This project covers the full analytics lifecycle — from raw data ingestion and modeling to KPI engineering, dashboard design, and live deployment.
 
 ---
 
-## 📌 Project Objective
+## 🔍 Project Overview
 
-The objective of this project is to design and implement a **real-world SaaS analytics pipeline** that answers key business questions around:
+This dashboard is designed to help SaaS stakeholders answer critical business questions such as:
 
-- Customer churn and retention
-- Revenue performance (MRR / ARR)
-- Product feature adoption
-- Plan-tier behavior and usage patterns
+- Why are customers churning?
+- How much revenue is being lost due to churn?
+- Which features drive retention or risk?
+- How do revenue and churn trends evolve over time?
 
-This project simulates how analytics teams build dashboards used by **product managers, growth teams, and executive leadership**.
+The solution follows real-world analytics best practices used in SaaS organizations.
 
 ---
 
-## 🗂️ Data Sources
+## 🧱 Data Sources
 
-The project uses multiple structured datasets representing core SaaS systems:
+Raw data simulates fragmented SaaS data typically pulled from billing systems, product analytics, and CRM tools.
 
-- **Accounts** – customer metadata and churn indicators  
-- **Subscriptions** – plan tiers, pricing, MRR, ARR, renewals  
-- **Feature Usage** – product usage events and engagement metrics  
-- **Churn Events** – churn timestamps and churn reasons  
-- **Support Tickets** – operational signals linked to churn risk  
+**Raw datasets (`/data/raw`):**
+- `ravenstack_accounts.csv` — customer account details
+- `ravenstack_subscriptions.csv` — subscription plans and pricing
+- `ravenstack_feature_usage.csv` — product feature usage
+- `ravenstack_churn_events.csv` — churn timestamps and churn reasons
+- `ravenstack_support_tickets.csv` — support activity linked to churn risk
 
-All raw datasets are stored in:
+---
 
+## 🗄️ Data Modeling & Transformation (PostgreSQL)
 
-/data/raw
-These datasets intentionally mirror fragmented data typically pulled from billing platforms, product analytics tools, and CRM systems.
+All raw datasets were ingested into **PostgreSQL** for transformation and metric engineering.
 
-🧱 Data Modeling & Transformation (PostgreSQL)
-All raw datasets were ingested into PostgreSQL for data cleaning, joins, and metric engineering.
+### Key work performed:
+- Designed a relational schema using primary and foreign keys
+- Joined customer, subscription, usage, churn, and support datasets
+- Cleaned and standardized timestamps, pricing, and usage fields
+- Engineered core SaaS business metrics
 
-Key work performed:
-Designed a relational schema with primary and foreign keys
+### Core metrics engineered:
+- Active subscriptions
+- Churn counts and churn rate (%)
+- Monthly Recurring Revenue (MRR)
+- Annual Recurring Revenue (ARR)
+- Average revenue impact of churn
+- Feature usage intensity
+- Beta feature adoption signals
 
-Joined customer, subscription, usage, churn, and support datasets
+---
 
-Engineered core SaaS business metrics including:
+## 📦 Analytics Output
 
-Active subscriptions
+A denormalized, analytics-ready dataset was created to support BI consumption.
 
-Churn counts and churn rate
-
-Monthly Recurring Revenue (MRR)
-
-Annual Recurring Revenue (ARR)
-
-Feature usage intensity
-
-Beta feature adoption signals
-
-Created a denormalized analytics view optimized for BI consumption
-
-The final analytics-ready dataset was exported as:
-
-text
-Copy code
+**Processed dataset:**
 /data/processed/dashboard_master_view.csv
-This file represents a production-style analytics warehouse output.
 
-📊 Power BI Analytics & Dashboarding
-The processed dataset was imported into Power BI for data modeling and visualization.
+yaml
+Copy code
 
-Data Modeling & Measures
-Built a clean analytical data model
+This file represents a production-style analytics warehouse output optimized for dashboarding.
 
-Created DAX measures for:
+---
 
-Churn Rate (%)
+## 📊 Power BI Analytics & Dashboarding
 
-Revenue metrics (MRR / ARR)
+The processed dataset was imported into **Power BI** to build a clean analytical data model.
 
-Average revenue impact
+### Data modeling:
+- Fact-style analytical table optimized for slicing and filtering
+- Business-friendly measures created using DAX
 
-Feature usage metrics
+### DAX measures include:
+- Churn Rate (%)
+- MRR and ARR
+- Average revenue impact
+- Feature usage metrics
+- Beta feature usage rate
 
-Beta feature usage rate
+---
 
-Dashboard Design
-The dashboard was designed for decision-making, not just reporting.
+## 📈 Dashboard Design
 
-Key components include:
+The dashboard was designed for **decision-making**, not just reporting.
 
-Executive KPI overview
+### Key components:
+- Executive KPI overview
+- Churn trends and churn reason analysis
+- Revenue trends over time
+- Feature usage heatmap by plan tier
+- Most-used and least-used feature identification
+- Custom tooltip pages providing contextual insights on hover
 
-Churn trends and churn reason analysis
+---
 
-Revenue trends over time
+## 🌐 Dashboard Publishing
 
-Feature usage heatmap by plan tier
-
-Most-used and least-used feature identification
-
-Custom tooltip pages providing contextual insights on hover
-
-🌐 Dashboard Publishing
 The final Power BI dashboard was published online, enabling interactive access without requiring Power BI Desktop.
 
-🔗 Live Dashboard:
+🔗 **Live Dashboard:**  
 https://app.powerbi.com/reportEmbed?reportId=6b5810e6-e1dc-40bd-b3f2-8442d8e97ce8&autoAuth=true&ctid=4278a402-1a9e-4eb9-8414-ffb55a5fcf1e
 
 This simulates real-world BI deployment for business stakeholders.
 
-📁 Project Structure
-text
-Copy code
+---
+
+## 📂 Project Structure
+
 data/
 ├── raw/
-│   ├── ravenstack_accounts.csv
-│   ├── ravenstack_subscriptions.csv
-│   ├── ravenstack_feature_usage.csv
-│   ├── ravenstack_churn_events.csv
-│   ├── ravenstack_support_tickets.csv
-│   └── README.md
-├── processed/
-│   └── dashboard_master_view.csv
-✅ Key Takeaways
+│ ├── ravenstack_accounts.csv
+│ ├── ravenstack_subscriptions.csv
+│ ├── ravenstack_feature_usage.csv
+│ ├── ravenstack_churn_events.csv
+│ ├── ravenstack_support_tickets.csv
+│ └── README.md
+└── processed/
+└── dashboard_master_view.csv
+
+yaml
+Copy code
+
+---
+
+## 🧠 Key Takeaways
+
 This project demonstrates:
 
-End-to-end analytics ownership
-
-Strong SQL and relational data modeling skills
-
-Business-focused metric engineering
-
-Advanced Power BI and DAX capabilities
-
-Experience building executive-ready SaaS dashboards
+- End-to-end analytics ownership
+- Strong SQL and relational data modeling skills
+- Business-focused metric engineering
+- Advanced Power BI and DAX capabilities
+- Experience building executive-ready SaaS dashboards
+- Realistic BI deployment workflows
 
 The implementation closely reflects how analytics teams operate in modern SaaS organizations.
 
-🚀 Tools & Technologies
-PostgreSQL – data modeling and transformation
+---
 
-SQL – joins, aggregations, metric engineering
+## 🛠️ Tools & Technologies
 
-Power BI – dashboarding and DAX measures
+- **PostgreSQL** — data modeling and transformation
+- **SQL** — joins, aggregations, metric engineering
+- **Power BI** — dashboarding and DAX measures
+- **GitHub** — version control and project documentation
 
-GitHub – version control and project documentation
+---
 
-📌 Author
-Yash Jadhav
-MS in Computer Science
+## 👤 Author
+
+**Yash Jadhav**  
+MS in Computer Science  
 SaaS Analytics | Data Analytics | Business Intelligence
