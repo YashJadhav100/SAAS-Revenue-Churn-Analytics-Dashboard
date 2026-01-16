@@ -24,11 +24,11 @@ The solution follows real-world analytics best practices used in SaaS organizati
 Raw data simulates fragmented SaaS data typically pulled from billing systems, product analytics, and CRM tools.
 
 **Raw datasets (`/data/raw`):**
-- `ravenstack_accounts.csv` — customer account details
-- `ravenstack_subscriptions.csv` — subscription plans and pricing
-- `ravenstack_feature_usage.csv` — product feature usage
-- `ravenstack_churn_events.csv` — churn timestamps and churn reasons
-- `ravenstack_support_tickets.csv` — support activity linked to churn risk
+- `ravenstack_accounts.csv` - customer account details
+- `ravenstack_subscriptions.csv` - subscription plans and pricing
+- `ravenstack_feature_usage.csv` - product feature usage
+- `ravenstack_churn_events.csv` - churn timestamps and churn reasons
+- `ravenstack_support_tickets.csv` - support activity linked to churn risk
 
 ---
 
