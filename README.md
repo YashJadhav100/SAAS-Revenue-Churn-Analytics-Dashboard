@@ -1,130 +1,150 @@
-🔄 End-to-End Analytics Workflow
+# SaaS Revenue & Churn Analytics Dashboard
 
-This project was built as a full analytics pipeline, simulating how real SaaS companies transform raw operational data into executive dashboards.
+An end-to-end **SaaS analytics project** that transforms raw operational data into an interactive, executive-ready business intelligence dashboard using **PostgreSQL** and **Power BI**.
 
-1️⃣ Raw Data Ingestion
+---
 
-We started with multiple raw CSV datasets representing core SaaS business entities:
+## 📌 Project Objective
 
-Accounts: customer metadata and churn flags
+The objective of this project is to design and implement a **real-world SaaS analytics pipeline** that answers key business questions around:
 
-Subscriptions: plan tier, ARR, MRR, renewals
+- Customer churn and retention
+- Revenue performance (MRR / ARR)
+- Product feature adoption
+- Plan-tier behavior and usage patterns
 
-Feature Usage: product usage events and engagement depth
+This project simulates how analytics teams build dashboards used by **product managers, growth teams, and executive leadership**.
 
-Churn Events: churn timing and reason codes
+---
 
-Support Tickets: operational signals tied to churn
+## 🗂️ Data Sources
 
-These files are stored under:
+The project uses multiple structured datasets representing core SaaS systems:
 
+- **Accounts** – customer metadata and churn indicators  
+- **Subscriptions** – plan tiers, pricing, MRR, ARR, renewals  
+- **Feature Usage** – product usage events and engagement metrics  
+- **Churn Events** – churn timestamps and churn reasons  
+- **Support Tickets** – operational signals linked to churn risk  
+
+All raw datasets are stored in:
+
+```text
 /data/raw
+These datasets intentionally mirror fragmented data typically pulled from billing platforms, product analytics tools, and CRM systems.
 
+🧱 Data Modeling & Transformation (PostgreSQL)
+All raw datasets were ingested into PostgreSQL for data cleaning, joins, and metric engineering.
 
-The raw data mirrors how SaaS data typically arrives from different systems (billing, product analytics, support tools).
+Key work performed:
+Designed a relational schema with primary and foreign keys
 
-2️⃣ Data Modeling & Transformation (PostgreSQL)
+Joined customer, subscription, usage, churn, and support datasets
 
-All raw datasets were loaded into PostgreSQL for transformation and modeling.
-
-Key steps:
-
-Defined relational schema using primary and foreign keys
-
-Joined subscriptions, usage, churn, and support data
-
-Aggregated metrics such as:
+Engineered core SaaS business metrics including:
 
 Active subscriptions
 
-Churn counts and rates
+Churn counts and churn rate
 
-Revenue (MRR / ARR)
+Monthly Recurring Revenue (MRR)
+
+Annual Recurring Revenue (ARR)
 
 Feature usage intensity
 
+Beta feature adoption signals
+
 Created a denormalized analytics view optimized for BI consumption
 
-The final analytics-ready output was exported as:
+The final analytics-ready dataset was exported as:
 
+text
+Copy code
 /data/processed/dashboard_master_view.csv
+This file represents a production-style analytics warehouse output.
 
+📊 Power BI Analytics & Dashboarding
+The processed dataset was imported into Power BI for data modeling and visualization.
 
-This mirrors a real-world analytics warehouse view.
-
-3️⃣ Power BI Data Modeling & Measures
-
-The processed dataset was imported into Power BI.
-
-Within Power BI:
-
-Built a clean star-style data model
+Data Modeling & Measures
+Built a clean analytical data model
 
 Created DAX measures for:
 
 Churn Rate (%)
 
-Average Revenue Impact
+Revenue metrics (MRR / ARR)
 
-Feature Usage Metrics
+Average revenue impact
 
-Beta Feature Adoption Rate
+Feature usage metrics
 
-Implemented:
+Beta feature usage rate
 
-KPI cards for executive overview
+Dashboard Design
+The dashboard was designed for decision-making, not just reporting.
 
-Time-series trend analysis
+Key components include:
 
-Feature usage heatmaps
+Executive KPI overview
 
-Churn reason breakdowns
+Churn trends and churn reason analysis
 
-Custom tooltip pages for deeper insights
+Revenue trends over time
 
-4️⃣ Interactive Dashboard Design
+Feature usage heatmap by plan tier
 
-The dashboard was designed for business stakeholders, not just analysts.
+Most-used and least-used feature identification
 
-Features include:
+Custom tooltip pages providing contextual insights on hover
 
-Executive KPI overview page
+🌐 Dashboard Publishing
+The final Power BI dashboard was published online, enabling interactive access without requiring Power BI Desktop.
 
-Product & feature analytics page
+🔗 Live Dashboard:
+https://app.powerbi.com/reportEmbed?reportId=6b5810e6-e1dc-40bd-b3f2-8442d8e97ce8&autoAuth=true&ctid=4278a402-1a9e-4eb9-8414-ffb55a5fcf1e
 
-Custom tooltip pages explaining churn impact on hover
+This simulates real-world BI deployment for business stakeholders.
 
-Clean labeling and short metric names for clarity
-
-Plan-tier segmentation for deeper analysis
-
-5️⃣ Publishing & Online Access
-
-The final dashboard was published online to enable interactive access without Power BI Desktop.
-
-🔗 Live Dashboard Link:
-(Add your published Power BI Service link here)
-
-This allows stakeholders to explore insights dynamically, simulating real-world BI deployment.
-
-📂 Project Structure
+📁 Project Structure
+text
+Copy code
 data/
-├── raw/                # Original SaaS datasets
-├── processed/          # Analytics-ready output
+├── raw/
+│   ├── ravenstack_accounts.csv
+│   ├── ravenstack_subscriptions.csv
+│   ├── ravenstack_feature_usage.csv
+│   ├── ravenstack_churn_events.csv
+│   ├── ravenstack_support_tickets.csv
+│   └── README.md
+├── processed/
 │   └── dashboard_master_view.csv
-
-🎯 Outcome
-
+✅ Key Takeaways
 This project demonstrates:
 
-End-to-end data analytics ownership
+End-to-end analytics ownership
 
-SQL-based data modeling and aggregation
+Strong SQL and relational data modeling skills
 
-Business-focused KPI design
+Business-focused metric engineering
 
-Strong Power BI & DAX skills
+Advanced Power BI and DAX capabilities
 
-Realistic SaaS analytics workflow
+Experience building executive-ready SaaS dashboards
 
-Built to reflect how analytics is actually done in production environments.
+The implementation closely reflects how analytics teams operate in modern SaaS organizations.
+
+🚀 Tools & Technologies
+PostgreSQL – data modeling and transformation
+
+SQL – joins, aggregations, metric engineering
+
+Power BI – dashboarding and DAX measures
+
+GitHub – version control and project documentation
+
+📌 Author
+Yash Jadhav
+MS in Computer Science
+SaaS Analytics | Data Analytics | Business Intelligence
