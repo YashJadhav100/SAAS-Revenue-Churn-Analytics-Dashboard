@@ -121,8 +121,7 @@ data/
 │   └── README.md
 └── processed/
     └── dashboard_master_view.csv
-
----
+```
 
 ## 🧠 Key Takeaways
 
